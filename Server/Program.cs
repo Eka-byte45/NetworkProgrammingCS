@@ -20,7 +20,7 @@ namespace Server
 			IPEndPoint point = new IPEndPoint(address, 27015);
 
 			//2)Создаем сокет, который будет слушать порт:
-;			Socket listen_socket = new Socket(address.AddressFamily,SocketType.Stream, ProtocolType.Tcp);
+			Socket listen_socket = new Socket(address.AddressFamily,SocketType.Stream, ProtocolType.Tcp);
 			listen_socket.Bind(point);
 			listen_socket.Listen(1);
 
@@ -42,6 +42,6 @@ namespace Server
 			listen_socket.Close();
 			Console.ReadLine();
 	
-;		}
+		}
 	}
 }

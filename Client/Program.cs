@@ -21,7 +21,7 @@ namespace Client
 				IPAddress target_address;
 				IPAddress.TryParse("127.0.0.1", out target_address);
 				IPEndPoint target = new IPEndPoint(target_address, 27015);
-				//2)Создаем сокет для подключения к Серверу$
+				//2)Создаем сокет для подключения к Серверу
 				Socket connect_socket = new Socket(target.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
 				//3) Подключаемся к серверу:
 				connect_socket.Connect(target);
@@ -33,7 +33,7 @@ namespace Client
 				byte[] bytes = Encoding.UTF8.GetBytes(message);
 				connect_socket.Send(bytes);
 				Console.WriteLine($"{bytes.Length} Bytes sent");
-				//4.2) Ожидаем подверждение от Сервера:
+				//4.2) Ожидаем подтверждение от Сервера:
 				byte[] buffer = new byte[1024];
 				int received = connect_socket.Receive(buffer);
 				string response = Encoding.UTF8.GetString(buffer);
